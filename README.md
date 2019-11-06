@@ -101,17 +101,12 @@ Form [here](https://caffe2.ai/docs/distributed-training.html), Caffe2 also suppo
 * A full function kubernetes.
 * Open the `features-gate` if you want to use GPU
 
-### Create a CRD for kuberntes
-
-```
-# kubectl apply -f https://raw.githubusercontent.com/kubeflow/caffe2-operator/master/examples/crd.yaml
-customresourcedefinition.apiextensions.k8s.io "caffe2jobs.kubeflow.org" created
-```
-
 ### Start the caffe2-operator
 
 ```
-# ./caffe2-operator -alsologtostderr -v 4 -controller-config-file /root/admin.conf
+# kubectl apply -f manifests/crd.yaml
+# kubectl apply -f manifests/rbac.yaml
+# kubectl apply -f manifests/deployment.yaml
 ```
 
 ### Prepare the dataset

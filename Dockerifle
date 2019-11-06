@@ -1,0 +1,8 @@
+FROM golang:1.8.2
+
+RUN mkdir -p /opt/kubeflow
+COPY _output/bin/caffe2-operator /opt/kubeflow
+
+RUN chmod a+x /opt/kubeflow/caffe2-operator
+
+CMD ["/opt/kubeflow/caffe2-operator", "--alsologtostderr", "-v=1"]
