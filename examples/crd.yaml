@@ -3,6 +3,7 @@ kind: CustomResourceDefinition
 metadata:
   name: caffe2jobs.kubeflow.org
 spec:
+  scope: Namespaced
   group: kubeflow.org
   version: v1alpha1
   names:
